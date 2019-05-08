@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div>
+    <ul class="dynamic-grid"
+        masonry-grid
+        [mg-model]="pics"
+        [mg-options]="{id: 'gallery', gridWidth: 250, gutterSize: 10, refreshOnImgLoad: true}">
+      <li *ngFor="let pic of pics" class="grid">
+        <a [href]="pic" target="_blank">
+          <img class="grid-img"
+               style="cursor: pointer"
+               ez-plus
+               [ezp-model]="{large:pic}"
+               [ezp-options]="{easing: true,zoomWindowWidth:600,zoomWindowHeight:600}"
+               data-actual-width=""
+               data-actual-height=""
+               [src]="pic"
+               ng-click="previewImg(pic)"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
