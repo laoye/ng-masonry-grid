@@ -32,7 +32,7 @@ function nextTick() {
 @Directive({
   selector: '[masonry-grid]'
 })
-export class MasonryGridDirective implements OnInit, OnChanges {
+export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
 
   @Input('mg-model') mgModel: string[];
 

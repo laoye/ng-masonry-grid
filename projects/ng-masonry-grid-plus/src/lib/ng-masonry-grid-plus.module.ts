@@ -1,5 +1,5 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
-import {MasonryGridDirective} from './masonry-grid.directive';
+import {NgMasonryGridPlusDirective} from './ng-masonry-grid-plus.directive';
 
 export function masonryGridInit() {
   return masonryGridInitFn;
@@ -16,15 +16,15 @@ export function masonryGridInit() {
 
 @NgModule({
   declarations: [
-    MasonryGridDirective
+    NgMasonryGridPlusDirective
   ],
   imports: [],
   exports: [
-    MasonryGridDirective
+    NgMasonryGridPlusDirective
   ],
   providers: [
     {provide: APP_INITIALIZER, useFactory: masonryGridInit, deps: [], multi: true}
   ]
 })
-export class MasonryGridModule {
+export class NgMasonryGridPlusModule {
 }

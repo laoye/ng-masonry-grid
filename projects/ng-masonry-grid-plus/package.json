@@ -1,6 +1,8 @@
 {
-  "name": "ng-masonry-grid",
+  "name": "ng-masonry-grid-plus",
   "version": "1.0.0",
+  "repository": "https://github.com/laoye/ng-masonry-grid",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
