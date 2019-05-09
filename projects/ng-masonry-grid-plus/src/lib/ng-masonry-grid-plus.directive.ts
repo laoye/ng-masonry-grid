@@ -65,7 +65,7 @@ export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.scrollNamespace.isBusy = true;
     const containerWidth = this.el.nativeElement.offsetWidth;
