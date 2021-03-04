@@ -41,8 +41,8 @@ export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
   @Output() infiniteScroll: EventEmitter<any>;
 
   private scrollNamespace: any = {};
-  private $element: JQuery<HTMLElement>;
-  private listElements: JQuery<HTMLElement>;
+  private $element: JQuery;
+  private listElements: JQuery;
   private reflowCount = 0;
   private lastDomWidth: number;
   private timeoutPromise: number;
@@ -135,12 +135,12 @@ export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
     const leavingElements = this.listElements.toArray().filter(listItem => $(listItem).hasClass('ng-leave'));
     return new Promise(resolve => {
       if (!leavingElements.length) {
-        resolve();
+        resolve(null);
       } else {
         $(leavingElements[0]).one('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', () => {
           window.setTimeout(() => {
             this.getListElements();
-            resolve();
+            resolve(null);
           });
         });
       }
@@ -455,7 +455,7 @@ export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
         loadedImgPromises.push(new Promise((resolve, reject) => {
           img.onload = () => {
             onLoad(img);
-            resolve();
+            resolve(null);
           };
           img.onerror = reject;
         }));
@@ -470,6 +470,4 @@ export class NgMasonryGridPlusDirective implements OnInit, OnChanges {
       window.setTimeout(onFullLoad);
     }
   }
-
-
 }
