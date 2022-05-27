@@ -11,18 +11,18 @@ import {
 } from '@angular/core';
 import {noop} from 'rxjs';
 
-interface MasonryGridOptions {
-  gridWidth: number;
-  gutterSize: number;
-  gridNo: number | 'auto';
-  direction: 'ltor' | 'rtol';
-  refreshOnImgLoad: boolean;
-  cssGrid: boolean;
-  performantScroll: boolean;
-  pageSize: number | 'auto';
-  scrollContainer: string;
-  infiniteScrollDelay: number;
-  infiniteScrollDistance: number;
+export interface MasonryGridOptions {
+  gridWidth?: number;
+  gutterSize?: number;
+  gridNo?: number | 'auto';
+  direction?: 'ltor' | 'rtol';
+  refreshOnImgLoad?: boolean;
+  cssGrid?: boolean;
+  performantScroll?: boolean;
+  pageSize?: number | 'auto';
+  scrollContainer?: string;
+  infiniteScrollDelay?: number;
+  infiniteScrollDistance?: number;
 }
 
 function nextTick() {
